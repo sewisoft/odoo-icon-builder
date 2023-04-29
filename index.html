@@ -49,7 +49,8 @@
             let icon = new IBO_ICON({
                 'font_family': 'sewisoft',
                 'icon_class': 'sewi-font sewisoft-icon',
-                'icon_background': '#A6DD64'
+                'icon_background': '#A6DD64',
+                'font_weight': '300'
             });
             icon.draw("icon");
         });
@@ -199,7 +200,7 @@
                         <label for="iconClass">Icon Class</label><i id="icon-preview"></i>
                     </div>
                     <div class="column">
-                        <input id="iconClass" type="text" placeholder="e.g. sewi-font sewisoft-icon">
+                        <input id="iconClass" type="text" value="sewi-font sewisoft-icon">
                     </div>
                 </div>
 
@@ -286,8 +287,8 @@
                     </div>
                     <div class="column">
                         <select id="fontWeight">
-                            <option value="900" selected>Normal</option>
-                            <option value="300">Light</option>
+                            <option value="300" selected>Light</option>
+                            <option value="900">Normal</option>
                         </select>
                     </div>
                 </div>
