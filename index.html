@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>IBO - Icon Builder for Odoo</title>
+    <title>IBO - Icon Builder for Odoo with Sewisoft</title>
 
     <meta name="author" content="spilymp">
     <meta name="description" content="An simple Icon Builder for Odoo (IBO), which provide the ability to create app icons in the style of the appicons of the ERP system Odoo.">
@@ -38,14 +38,18 @@
     <!-- Weather Icons-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css" rel="stylesheet">
 
+    <!-- Sewisoft Font -->
+    <link href="font/sewisoft-font.css" rel="stylesheet">
+
     <script type="text/javascript" src="js/ibo_icon.js"></script>
 
     <script>
 
         document.addEventListener("DOMContentLoaded", function () {
             let icon = new IBO_ICON({
-                'font_family': 'bootstrap-icons',
-                'icon_class': 'bi bi-droplet',
+                'font_family': 'sewisoft',
+                'icon_class': 'sewi-font sewisoft-icon',
+                'icon_background': '#A6DD64'
             });
             icon.draw("icon");
         });
@@ -106,6 +110,10 @@
                     document.getElementById('iconSetWebsite').href = "http://erikflowers.github.io/weather-icons/"
                     document.getElementById('iconClass').placeholder = "e.g. wi-day-sleet-storm"
                     break;
+                case "sewisoft":
+                    document.getElementById('iconSetWebsite').href = "http://sewisoft.de"
+                    document.getElementById('iconClass').placeholder = "e.g. sewi-font sewisoft-icon"
+                    break;
                 default:
                     document.getElementById('iconSetWebsite').href = "https://fontawesome.com/v5/search?m=free&s=solid%2Cregular"
                     document.getElementById('iconClass').placeholder = "e.g. fas fa-carrot"
@@ -129,12 +137,13 @@
         <span style="font-family: 'remixicon', Arial, sans-serif;"></span>
         <span style="font-family: 'tabler-icons', Arial, sans-serif;"></span>
         <span style="font-family: 'weathericons', Arial, sans-serif;"></span>
+        <span style="font-family: 'sewisoft', Arial, sans-serif;"></span>
     </div>
 
     <header class="container">
         <div class="row">
             <div class="column align-center">
-                <h1>IBO - Icon Builder for Odoo</h1>
+                <h1>IBO - Icon Builder for Odoo with sewisoft icons</h1>
             </div>
         </div>
     </header>
@@ -165,6 +174,7 @@
 
                     <div class="column column-40">
                         <select id="iconSet" onchange="populateIconSetWebsite()">
+                            <option value="sewisoft">sewisoft</option>
                             <option value="Font Awesome 5 Free">Font Awesome 5 Solid & Regular</option>
                             <option value="Font Awesome 5 Brands">Font Awesome 5 Brands</option>
                             <option value="FontAwesome">Font Awesome 4.7</option>
@@ -189,7 +199,7 @@
                         <label for="iconClass">Icon Class</label><i id="icon-preview"></i>
                     </div>
                     <div class="column">
-                        <input id="iconClass" type="text" placeholder="e.g. fas fa-address-card">
+                        <input id="iconClass" type="text" placeholder="e.g. sewi-font sewisoft-icon">
                     </div>
                 </div>
 
@@ -198,7 +208,7 @@
                         <label for="iconBackgroundColor">Icon Background Color</label>
                     </div>
                     <div class="column">
-                        <input type="color" onchange="clickColor(0, -1, -1, 5)" value="#9b4dca"
+                        <input type="color" onchange="clickColor(0, -1, -1, 5)" value="#A6DD64"
                             id="iconBackgroundColor">
                     </div>
                 </div>
